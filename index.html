@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的世界版本库</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>我的世界版本库</h1>
+        <nav>
+            <div class="search-box">
+                <input type="text" class="search-input" id="search" placeholder="搜索版本..." oninput="filterVersions()" />
+            </div>
+            <button onclick="filterVersions()">搜索</button>
+            <button onclick="toggleTheme()">切换主题</button>
+            <button onclick="showSection('about')">关于</button>
+            <button id="show-all-versions" onclick="showSection('all')">显示所有版本</button>
+        </nav>
+        <div class="version-selection">
+            <label for="version-type">选择版本类型:</label>
+            <select id="version-type" class="styled-select" onchange="filterByType(this.value)">
+                <option value="全部">全部</option>
+                <option value="正式版">正式版</option>
+                <option value="测试版">测试版</option>
+                <option value="开发版">开发版</option>
+            </select>
+        </div>
+        <div class="game-selection">
+            <button onclick="filterByGame('MinecraftEdu')">MinecraftEdu</button>
+            <button onclick="filterByGame('jdee')">京东教育版</button>
+            <button onclick="filterByGame('meec')">教育个人版</button>
+        </div>
+        <div id="flashing-message" class="flashing-message">missingno!</div>
+    </header>
+    <main>
+        <section id="home" class="version-list">
+            <div class="background"></div>
+            <h2 onclick="showDetails('版本库介绍')">版本库</h2>
+            <h3 onclick="showDetails('MinecraftEdu')">MinecraftEdu</h3>
+            <div class="version-card" data-version="1.19.2" data-game="MinecraftEdu" data-type="正式版">
+                <h4>1.19.2 <span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 2022-08-30</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('1.19.2', 'client')">下载客户端</button>
+                    <button onclick="downloadVersion('1.19.2', 'server')">下载服务端</button>
+                    <button onclick="showDetails('1.19.2')">详细信息</button>
+                </div>
+            </div>
+            <div class="version-card" data-version="1.18.1" data-game="MinecraftEdu">
+                <h4>1.18.1</h4>
+                <p>发布日期: 2022-01-10</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('1.18.1', 'client')">下载客户端</button>
+                    <button onclick="downloadVersion('1.18.1', 'server')">下载服务端</button>
+                    <button onclick="showDetails('1.18.1')">详细信息</button>
+                </div>
+            </div>
+            <h3 onclick="showDetails('京东教育版')">京东教育版</h3>
+            <div class="version-card" data-version="1.14.50" data-game="jdee" data-type="正式版">
+                <h4>1.14.50<span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 未知</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('1.14.50', 'client')">下载</button>
+                    <button onclick="showDetails('1.14.50')">详细信息</button>
+                </div>
+            </div>
+            <h3 onclick="showDetails('教育个人版')">教育个人版</h3>
+            <div class="version-card" data-version="1.5.9" data-game="meec" data-type="正式版">
+                <h4>1.5.9<span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 2023-08-03</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('1.5.9', 'win')">下载Windows端</button>
+                    <button onclick="downloadVersion('1.5.9', 'android')">下载Android端</button>
+                    <button onclick="showDetails('1.5.9')">详细信息</button>
+                </div>
+            </div>
+            <div class="version-card" data-version="1.5.2" data-game="meec" data-type="正式版">
+                <h4>1.5.2<span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 未知</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('1.5.2', 'android')">下载Android端</button>
+                    <button onclick="showDetails('1.5.2')">详细信息</button>
+                </div>
+            </div>
+            <div class="version-card" data-version="1.5.1" data-game="meec" data-type="正式版">
+                <h4>1.5.1<span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 2023-06-28</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('1.5.1', 'win')">下载Windows端</button>
+                    <button onclick="downloadVersion('1.5.1', 'android')">下载Android端</button>
+                    <button onclick="showDetails('1.5.1')">详细信息</button>
+                </div>
+            </div>
+            <div class="version-card" data-version="1.4.4" data-game="meec" data-type="正式版">
+                <h4>1.4.4<span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 未知</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('1.4.4', 'android')">下载Android端</button>
+                    <button onclick="showDetails('1.4.4')">详细信息</button>
+                </div>
+            </div>
+            <br></br>
+        </section>
+        <section id="about" class="about-section" style="display: none;">
+            <div class="background"></div>
+            <h2>关于版本库</h2>
+            <p>这是一个关于《我的世界》版本的库，提供了MinecraftEdu、京东教育版和教育个人版的下载链接和版本信息。</p>
+            <p>版本库会定期更新，欢迎大家使用！</p>
+            <p>0.5 Dev 1,Made by Asgenghiskhan</p>
+            <br></br>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 我的世界版本库. 保留所有权利。</p>
+    </footer>
+    <div id="detail-modal" class="modal" onclick="closeDetails(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-button" onclick="closeDetails(event)">x</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-content"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
