@@ -14,17 +14,42 @@ document.addEventListener('DOMContentLoaded', loadMessages);
 
 function filterVersions() {
     const searchInput = document.getElementById('search').value.toLowerCase();
+    const fuzzySearchEnabled = document.getElementById('fuzzy-search').checked;
     const versionCards = document.querySelectorAll('.version-card');
-    
+
     versionCards.forEach(card => {
         const versionName = card.querySelector('h4').textContent.toLowerCase();
-        card.style.display = versionName.includes(searchInput) ? 'block' : 'none';
+        const isMatch = fuzzySearchEnabled
+            ? fuzzyMatch(versionName, searchInput)
+            : versionName.includes(searchInput);
+        card.style.display = isMatch ? 'block' : 'none';
     });
-    if (searchInput.toLowerCase() === 'minecraft') {
-        // 使用应用协议打开《我的世界》
-        window.location.href = 'minecraft:'; // 替换为应用的协议
-    } else if (inputValue.toLowerCase() === 'genshin impact') {
-        window.location.href = 'genshin:';
+
+    // 调用应用协议的函数
+    handleAppRedirect(searchInput);
+}
+
+// 新的模糊匹配函数
+function fuzzyMatch(versionName, searchInput) {
+    const searchTerms = searchInput.split(' ');
+
+    // 检查每一个搜索词
+    return searchTerms.every(term => {
+        // 处理常见的版本格式
+        const regex = new RegExp(term.replace(/build/i, 'build').replace(/b(\d+)/, 'build \$1'), 'i');
+        return regex.test(versionName);
+    });
+}
+
+function handleAppRedirect(input) {
+    const appRedirects = {
+        'minecraft': 'minecraft:',
+        'genshin impact': 'genshin:'
+    };
+
+    const appUrl = appRedirects[input];
+    if (appUrl) {
+        window.location.href = appUrl;
     }
 }
 
@@ -39,13 +64,8 @@ function filterByGame(game) {
 
 function downloadVersion(version, type) {
     const downloadLinks = {
-        '1.19.2': {
-            'client': 'https://example.com/minecraft-1.19.2-client.zip',
-            'server': 'https://example.com/minecraft-1.19.2-server.zip',
-        },
-        '1.18.1': {
-            'client': 'https://example.com/minecraft-1.18.1-client.zip',
-            'server': 'https://example.com/minecraft-1.18.1-server.zip',
+        '1.8.9 Build 3': {
+            'classroom': 'https://pan.huang1111.cn/s/P66bZhm',
         },
         '1.14.50': {
             'client': 'https://pan.huang1111.cn/s/oXXbjh8',
@@ -79,34 +99,44 @@ function toggleTheme() {
 }
 
 function showSection(section) {
+    const menuSection = document.getElementById('menu');
     const homeSection = document.getElementById('home');
     const aboutSection = document.getElementById('about');
+    const settingsSection = document.getElementById('settings');
     const versionCards = document.querySelectorAll('.version-card');
 
     if (section === 'about') {
         homeSection.style.display = 'none';
+        settingsSection.style.display = 'none';
         aboutSection.style.display = 'block';
+        menuSection.style.display = 'none';
     } else if (section === 'all') {
         homeSection.style.display = 'block';
         aboutSection.style.display = 'none';
+        settingsSection.style.display = 'none';
+        menuSection.style.display = 'none';
         versionCards.forEach(card => {
             card.style.display = 'block';
         });
-    } else {
-        homeSection.style.display = 'block';
+    } else if (section === 'settings') {
+        homeSection.style.display = 'none';
         aboutSection.style.display = 'none';
+        settingsSection.style.display = 'block';
+        menuSection.style.display = 'none';
+    } else {
+        homeSection.style.display = 'none';
+        settingsSection.style.display = 'none';
+        aboutSection.style.display = 'none';
+        menuSection.style.display = 'block';
     }
 }
 
 function showDetails(version) {
     const versionDetails = {
-        '1.19.2': '这是版本 1.19.2 的详细信息，包含了所有更新和修复的内容。',
-        '1.18.1': '这是版本 1.18.1 的详细信息，包含了所有更新和修复的内容。',
         '1.14.50': '这是版本 1.14.50 的详细信息，包含了所有更新和修复的内容。',
         '1.5.9': '这是教育版 1.0.0 的详细信息，包含了所有更新和修复的内容。',
         'MinecraftEdu': '这是MinecraftEdu版的详细信息，包含了所有更新和修复的内容。',
         '京东教育版': '这是京东教育版的详细信息，包含了所有更新和修复的内容。',
-        '版本库介绍': '这是版本库的说明',
     };
 
     document.getElementById('modal-title').textContent = version;
