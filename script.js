@@ -64,8 +64,18 @@ function filterByGame(game) {
 
 function downloadVersion(version, type) {
     const downloadLinks = {
-        '1.8.9 Build 3': {
-            'classroom': 'https://pan.huang1111.cn/s/P66bZhm',
+        '0.9847': {
+            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRkY2NiQUxaUHA1b0g4Unc.jar',
+        },
+        '0.9843': {
+            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRkcG90Z2FtR0VQcUR1RVE.jar',
+        },
+        '0.984': {
+            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRkLURYcEFMYzN0MmM0MFk.jar',
+        },
+        '0.982': {
+            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlZlpraVluZ2hOZW5SVlU.jar',
+            'premium': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlSDFSbWFjWm0zYU4tZFE.jar',
         },
         '1.14.50': {
             'client': 'https://pan.huang1111.cn/s/oXXbjh8',
