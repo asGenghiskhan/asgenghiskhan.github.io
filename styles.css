@@ -48,6 +48,10 @@ body.light nav button {
     background-color: #1976D2;
 }
 
+body.light mainnav button {
+    background-color: #1976D2;
+}
+
 body.light .game-selection button {
     background-color: #4682B4;
 }
@@ -72,10 +76,6 @@ body.light .styled-select:hover {
     border-color: #4CAF50; 
     background-color: #e1e1e1; 
 }
-
-/*html, body {
-    margin: 0; /* 去掉默认边距 */
-/*}*/
 
 body.light .background {
     background-color: #ffffff;
@@ -496,4 +496,70 @@ body.light #play-button {
 
 .fuzzy-search-checkbox:checked + .fuzzy-search-custom {
     background-image: url('icons/on.png'); /* 替换为选中时的图片路径 */
+}
+
+.details {
+    display: none; /* 默认隐藏 */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #5e5e5e; /* 深色模式边框色 */
+    background-color: #4e4e4e; /* 深色模式背景色 */
+}
+
+.version {
+    cursor: pointer;
+    color: #1e90ff; /* 深色模式版本文字色 */
+    text-decoration: underline;
+}
+
+/* 详细信息样式 */
+body.light .details {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+body.light .version {
+    color: #007BFF;
+}
+
+#slogan {
+    background: #2a2a2a; /* 深色背景 */
+    border: 2px solid #66bb6a; /* 边框颜色 */
+    border-radius: 12px; /* 圆角边框 */
+    padding: 20px; /* 内边距 */
+    text-align: center; /* 文本居中 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* 深色阴影 */
+    margin: 20px 0; /* 上下外边距 */
+    font-size: 1.2em; /* 字体大小 */
+    font-weight: bold; /* 字体加粗 */
+    height: 100px;
+    display: flex; /* 使用 flexbox */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    text-align: center; /* 文字居中 */
+}
+
+body.light #slogan {
+    background: linear-gradient(135deg, #f0f0f0, #ffffff); /* 渐变背景 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 更强的阴影 */
+    border: 2px solid #4CAF50; /* 绿色边框 */
+}
+
+mainnav {
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    flex-wrap: wrap; /* 允许换行 */
+    margin: 20px 0; /* 上下外边距 */
+    text-align: center; /* 文字居中 */
+    gap: 20px; /* 设置按钮之间的间隙 */
+}
+
+mainnav button {
+    padding: 8px;
+    background-color: #5e5e5e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

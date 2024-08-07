@@ -123,6 +123,11 @@ function showSection(section) {
         aboutSection.style.display = 'none';
         settingsSection.style.display = 'block';
         menuSection.style.display = 'none';
+    } else if (section === 'plan') {
+        homeSection.style.display = 'none';
+        aboutSection.style.display = 'none';
+        settingsSection.style.display = 'none';
+        menuSection.style.display = 'none';
     } else {
         homeSection.style.display = 'none';
         settingsSection.style.display = 'none';
