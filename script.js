@@ -77,6 +77,9 @@ function downloadVersion(version, type) {
             'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlZlpraVluZ2hOZW5SVlU.jar',
             'premium': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlSDFSbWFjWm0zYU4tZFE.jar',
         },
+        '1.8.9 Build 3': {
+            'classroom': 'https://pan.huang1111.cn/s/P66bZhm',
+        },
         '1.14.50': {
             'client': 'https://pan.huang1111.cn/s/oXXbjh8',
         },
