@@ -77,6 +77,10 @@ function downloadVersion(version, type) {
             'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlZlpraVluZ2hOZW5SVlU.jar',
             'premium': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlSDFSbWFjWm0zYU4tZFE.jar',
         },
+        '1.5.2 Build 1': {
+            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRla1lkZVoxcW1jV3NVTlE.jar',
+            'premium': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlLUEyVTJadTFhaU9IN2s.jar',
+        },
         '1.8.9 Build 3': {
             'classroom': 'https://pan.huang1111.cn/s/P66bZhm',
         },
