@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <link rel="icon" href="icons/icon.png" type="image/png">
+        <link rel="shortcut icon" href="icons/icon.png" type="image/png">
         <h1>我的世界版本库</h1>
         <nav>
             <div class="search-box">
@@ -33,6 +33,7 @@
             <button onclick="filterByGame('MinecraftEdu')">MinecraftEdu</button>
             <button onclick="filterByGame('jdee')">京东教育版</button>
             <button onclick="filterByGame('meec')">教育个人版</button>
+            <button onclick="filterByGame('mcpi')">树莓派版</button>
         </div>
         <div id="flashing-message" class="flashing-message">missingno!</div>
     </header>
@@ -40,7 +41,7 @@
         <section id="menu" class="menu-section">
             <div class="background"></div>
             <h2>版本库首页</h2>
-            <p>版本库处于早期开发内测阶段，严禁在未经许可的情况下对外公开。请点击上面显示所有版本来查看版本库中的版本。目前MinecraftEdu只有1.8.9 Build 3,1.5.2 Build 1和所有Beta(Mod)版的下载链接</p>
+            <p>版本库处于早期开发内测阶段，严禁在未经许可的情况下对外公开。请点击上面显示所有版本来查看版本库中的版本。目前MinecraftEdu还没有提供1.6.4，1.7.10的下载链接</p>
             <mainnav>
                 <button onclick="window.location.href='changelog.html'">查看更新日志</button>
                 <button class="button" onclick="window.location.href='https://github.com/asGenghiskhan/asgenghiskhan.github.io/issues/new/choose'">反馈问题</button>
@@ -247,7 +248,7 @@
             <h5>1.5.1</h5>
             <div class="version-card" data-version="1.5.1 Build 16" data-game="MinecraftEdu" data-type="开发版">
                 <h4>1.5.1 Build 16<span class="version-type">(开发版)</span></h4>
-                <p>发布日期: 2022-08-30</p>
+                <p>发布日期: 2013-07-12</p>
                 <div class="version-buttons">
                     <button onclick="downloadVersion('1.5.1 Build 16', 'classroom')">下载教室版</button>
                     <button onclick="showDetails('1.5.1 Build 16')">详细信息</button>
@@ -255,7 +256,7 @@
             </div>
             <div class="version-card" data-version="1.5.1 Build 9" data-game="MinecraftEdu" data-type="正式版">
                 <h4>1.5.1 Build 9<span class="version-type">(正式版)</span></h4>
-                <p>发布日期: 2022-08-30</p>
+                <p>发布日期: 2013-04-23</p>
                 <div class="version-buttons">
                     <button onclick="downloadVersion('1.5.1 Build 9', 'premium')">下载付费版</button>
                     <button onclick="showDetails('1.5.1 Build 9')">详细信息</button>
@@ -263,7 +264,7 @@
             </div>
             <div class="version-card" data-version="1.5.1 Build 7" data-game="MinecraftEdu" data-type="开发版">
                 <h4>1.5.1 Build 7<span class="version-type">(开发版)</span></h4>
-                <p>发布日期: 2022-08-30</p>
+                <p>发布日期: 2013-04-22</p>
                 <div class="version-buttons">
                     <button onclick="downloadVersion('1.5.1 Build 7', 'classroom')">下载教室版</button>
                     <button onclick="showDetails('1.5.1 Build 7')">详细信息</button>
@@ -271,7 +272,7 @@
             </div>
             <div class="version-card" data-version="1.5.1 Build 4" data-game="MinecraftEdu" data-type="开发版">
                 <h4>1.5.1 Build 4<span class="version-type">(开发版)</span></h4>
-                <p>发布日期: 2022-08-30</p>
+                <p>发布日期: 2013-04-17</p>
                 <div class="version-buttons">
                     <button onclick="downloadVersion('1.5.1 Build 4', 'classroom')">下载教室版</button>
                     <button onclick="showDetails('1.5.1 Build 4')">详细信息</button>
@@ -279,7 +280,7 @@
             </div>
             <div class="version-card" data-version="1.5.1 Build 3" data-game="MinecraftEdu" data-type="开发版">
                 <h4>1.5.1 Build 3<span class="version-type">(开发版)</span></h4>
-                <p>发布日期: 2022-08-30</p>
+                <p>发布日期: 2013-04-16</p>
                 <div class="version-buttons">
                     <button onclick="downloadVersion('1.5.1 Build 3', 'classroom')">下载教室版</button>
                     <button onclick="showDetails('1.5.1 Build 3')">详细信息</button>
@@ -365,14 +366,31 @@
                     <button onclick="showDetails('1.4.4')">详细信息</button>
                 </div>
             </div>
+            <h3 onclick="showDetails('树莓派版')">树莓派版</h3>
+            <div class="version-card" data-version="0.1.1" data-game="mcpi" data-type="正式版">
+                <h4>0.1.1<span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 2013-02-11</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('0.1.1', 'client')">下载</button>
+                    <button onclick="showDetails('0.1.1')">详细信息</button>
+                </div>
+            </div>
+            <div class="version-card" data-version="0.1.0" data-game="mcpi" data-type="正式版">
+                <h4>0.1.0<span class="version-type">(正式版)</span></h4>
+                <p>发布日期: 未知</p>
+                <div class="version-buttons">
+                    <button onclick="downloadVersion('0.1.0', 'client')">下载</button>
+                    <button onclick="showDetails('0.1.0')">详细信息</button>
+                </div>
+            </div>
             <br></br>
         </section>
         <section id="about" class="about-section" style="display: none;">
             <div class="background"></div>
             <h2>关于版本库</h2>
-            <p>这是一个关于《我的世界》版本的库，提供了MinecraftEdu、京东教育版和教育个人版的下载链接和版本信息。</p>
+            <p>这是一个关于《我的世界》版本的库，提供了MinecraftEdu、京东教育版、教育个人版和树莓派版的下载链接和版本信息。</p>
             <p>版本库会定期更新，欢迎大家使用！</p>
-            <p>0.10.2,Made by Asgenghiskhan</p>
+            <p>0.11,Made by Asgenghiskhan</p>
             <br></br>
         </section>
         <section id="settings" class="settings-section" style="display: none;">

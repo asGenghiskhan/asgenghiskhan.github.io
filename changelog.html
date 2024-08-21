@@ -14,7 +14,7 @@
         }
     </style>
     <header>
-        <link rel="icon" href="icons/icon.png" type="image/png">
+        <link rel="shortcut icon" href="icons/icon.png" type="image/png">
         <h1>我的世界版本库</h1>
         <nav>
             <button onclick="toggleTheme()">切换主题</button>
@@ -36,11 +36,11 @@
                 <div class="modal-content">
                     <span class="close-button" onclick="closeDetails(event)">x</span>
                     <h2>版本信息</h2>
-                    <p>版本号：0.10.2</p>
-                    <p>主版本号：0.10</p>
+                    <p>版本号：0.11</p>
+                    <p>主版本号：0.11</p>
                     <p>版本类型：正式版(内测)</p>
                     <p>版本代号：Indev</p>
-                    <p>更改日期：2024-08-09</p>
+                    <p>更改日期：2024-08-21</p>
                 </div>
             </div>
             <h2>版本</h2>
@@ -63,6 +63,18 @@
             <div id="all-versions" style="display: none;">
                 <p>所有版本</p>
                 <ul>
+                    <li>
+                        <span class="version" onclick="toggleDetails('version0.11')">0.11</span>
+                        <div class="details" id="version0.11" style="display: none;">
+                            <ul>
+                                <li>MinecraftEdu增加了1.5.1所有版本的下载链接</li>
+                                <li>增加了树莓派版的下载链接</li>
+                                <li>直链下载链接已废，更换了直链下载链接的链接</li>
+                                <li>完善了切换主题的机制，目前切换主题后不会出现主页和更新日志主题不同的情况</li>
+                                <li>更新日期:2024-08-21</li>
+                            </ul>
+                        </div>
+                    </li>
                     <li>
                         <span class="version" onclick="toggleDetails('version0.10.2')">0.10.2</span>
                         <div class="details" id="version0.10.2" style="display: none;">
@@ -112,6 +124,15 @@
                             <ul>
                                 <li>首次发布</li>
                                 <li>更新日期:2024-07-29</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="version" onclick="toggleDetails('internalversion')">0.1至0.5</span>
+                        <div class="details" id="internalversion" style="display: none;">
+                            <ul>
+                                <li>版本库的雏形产生，这些版本从未公开发布过</li>
+                                <li>日期:2024-07-27至2024-07-29</li>
                             </ul>
                         </div>
                     </li>

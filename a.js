@@ -1,3 +1,34 @@
+// 页面加载时检查存储的主题
+window.addEventListener('DOMContentLoaded', function() {
+    const theme = localStorage.getItem('theme');
+    // 如果没有存储的主题，默认设置为深色模式
+    if (!theme) {
+        localStorage.setItem('theme', 'dark');
+    }
+    // 根据存储的主题设置页面主题
+    if (theme === 'light') {
+        document.body.classList.add('light');
+    }
+});
+
+// 切换主题的函数
+function toggleTheme() {
+    document.body.classList.toggle('light');
+    // 存储用户的选择
+    if (document.body.classList.contains('light')) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+window.onload = function() {
+    updateProgress('progress-bar-1', 35.14);
+    updateProgress('progress-bar-2', 15);
+    updateProgress('progress-bar-3', 1);
+    displayRandomSlogan();
+};
+
 // 进度条功能
 function updateProgress(barId, percentage) {
     const progressBar = document.getElementById(barId);
@@ -25,19 +56,11 @@ function updateProgress(barId, percentage) {
     }
 }
 
-// 页面加载时更新进度条和显示一个随机标语
-window.onload = function() {
-    updateProgress('progress-bar-1', 21.6);
-    updateProgress('progress-bar-2', 15);
-    updateProgress('progress-bar-3', 1);
-    displayRandomSlogan();
-};
-
 // 随机标语功能
 const slogans = [
     "你知道吗？版本库至今还处于内测阶段",
     "你知道吗？版本库目前还没有正式的名字",
-    "你知道吗？MinecraftEdu版本目前只有极个别版本的下载链接",
+    "你知道吗？MinecraftEdu版本目前只有个别版本的下载链接",
     "你知道吗？版本库存在几个彩蛋"
 ];
 
@@ -74,10 +97,7 @@ function toggleAllFormalVersions() {
     allFormalVersions.style.display = allFormalVersions.style.display === "none" ? "block" : "none"; // 切换显示正式版本
 }
 
-// 切换主题
-function toggleTheme() {
-    document.body.classList.toggle('light');
-}
+
 
 // 弹窗功能
 var modal = document.getElementById("versionInfoModal");

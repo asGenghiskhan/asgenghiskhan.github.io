@@ -1,3 +1,27 @@
+// 页面加载时检查存储的主题
+window.addEventListener('DOMContentLoaded', function() {
+    const theme = localStorage.getItem('theme');
+    // 如果没有存储的主题，默认设置为深色模式
+    if (!theme) {
+        localStorage.setItem('theme', 'dark');
+    }
+    // 根据存储的主题设置页面主题
+    if (theme === 'light') {
+        document.body.classList.add('light');
+    }
+});
+
+// 切换主题的函数
+function toggleTheme() {
+    document.body.classList.toggle('light');
+    // 存储用户的选择
+    if (document.body.classList.contains('light')) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
 let messages = [];
 let currentMessageIndex = 0;
 
@@ -44,7 +68,8 @@ function fuzzyMatch(versionName, searchInput) {
 function handleAppRedirect(input) {
     const appRedirects = {
         'minecraft': 'minecraft:',
-        'genshin impact': 'genshin:'
+        'minecraftpe': 'minecraftpe:',
+        'genshin impact': 'yuanshengame:'
     };
 
     const appUrl = appRedirects[input];
@@ -65,21 +90,37 @@ function filterByGame(game) {
 function downloadVersion(version, type) {
     const downloadLinks = {
         '0.9847': {
-            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRkY2NiQUxaUHA1b0g4Unc.jar',
+            'classroom': 'https://pan.huang1111.cn/s/A6baXiB',
         },
         '0.9843': {
-            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRkcG90Z2FtR0VQcUR1RVE.jar',
+            'classroom': 'https://pan.huang1111.cn/s/WzeOAc3',
         },
         '0.984': {
-            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRkLURYcEFMYzN0MmM0MFk.jar',
+            'classroom': 'https://pan.huang1111.cn/s/mxWOoF1',
         },
         '0.982': {
-            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlZlpraVluZ2hOZW5SVlU.jar',
-            'premium': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlSDFSbWFjWm0zYU4tZFE.jar',
+            'classroom': 'https://pan.huang1111.cn/s/lagO4uL',
+            'premium': 'https://pan.huang1111.cn/s/752EBFg',
+        },
+        '1.5.1 Build 3': {
+            'classroom': 'https://pan.huang1111.cn/s/nqRx9tm',
+        },
+        '1.5.1 Build 4': {
+            'classroom': 'https://pan.huang1111.cn/s/oXVR1F8',
+        },
+        '1.5.1 Build 7': {
+            'classroom': 'https://pan.huang1111.cn/s/6edlXuN',
+        },
+        '1.5.1 Build 9': {
+            'classroom': 'https://pan.huang1111.cn/s/K9wjgTY',
+            'premium': 'https://pan.huang1111.cn/s/LxOPXu6',
+        },
+        '1.5.1 Build 16': {
+            'classroom': 'https://pan.huang1111.cn/s/XqebGul',
         },
         '1.5.2 Build 1': {
-            'classroom': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRla1lkZVoxcW1jV3NVTlE.jar',
-            'premium': 'https://dlink.host/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBakM4d2xFaDZFZjRlLUEyVTJadTFhaU9IN2s.jar',
+            'classroom': 'https://pan.huang1111.cn/s/E7yZ7Hb',
+            'premium': 'https://pan.huang1111.cn/s/Nko2EI1',
         },
         '1.8.9 Build 3': {
             'classroom': 'https://pan.huang1111.cn/s/P66bZhm',
@@ -101,6 +142,12 @@ function downloadVersion(version, type) {
         '1.4.4': {
             'android': 'https://pan.huang1111.cn/s/1QQ55Iv',
         },
+        '0.1.1': {
+            'client': 'https://pan.huang1111.cn/s/y5qV1C6',
+        },
+        '0.1.0': {
+            'client': 'https://pan.huang1111.cn/s/1QNz5uv',
+        },
     };
 
     const link = downloadLinks[version][type];
@@ -109,10 +156,6 @@ function downloadVersion(version, type) {
     } else {
         alert('下载链接不存在！');
     }
-}
-
-function toggleTheme() {
-    document.body.classList.toggle('light');
 }
 
 function showSection(section) {
