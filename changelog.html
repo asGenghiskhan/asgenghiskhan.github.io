@@ -36,11 +36,11 @@
                 <div class="modal-content">
                     <span class="close-button" onclick="closeDetails(event)">x</span>
                     <h2>版本信息</h2>
-                    <p>版本号：0.11</p>
-                    <p>主版本号：0.11</p>
+                    <p>版本号：0.12</p>
+                    <p>主版本号：0.12</p>
                     <p>版本类型：正式版(内测)</p>
                     <p>版本代号：Indev</p>
-                    <p>更改日期：2024-08-21</p>
+                    <p>更改日期：2024-09-15</p>
                 </div>
             </div>
             <h2>版本</h2>
@@ -63,6 +63,16 @@
             <div id="all-versions" style="display: none;">
                 <p>所有版本</p>
                 <ul>
+                    <li>
+                        <span class="version" onclick="toggleDetails('version0.12')">0.12</span>
+                        <div class="details" id="version0.12" style="display: none;">
+                            <ul>
+                                <li>更改了版本库链接</li>
+                                <li>由于链接改变，反馈问题链接也变更</li>
+                                <li>更新日期:2024-09-15</li>
+                            </ul>
+                        </div>
+                    </li>
                     <li>
                         <span class="version" onclick="toggleDetails('version0.11')">0.11</span>
                         <div class="details" id="version0.11" style="display: none;">
